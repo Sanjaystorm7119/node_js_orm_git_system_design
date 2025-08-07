@@ -1,45 +1,56 @@
-let nums = [1,2,3,4]
-let sum = 0
-for (let i =0 ; i < nums.length;i++){
-    sum+=nums[i]
+let nums = [1, 2, 3, 4];
+let sum = 0;
+for (let i = 0; i < nums.length; i++) {
+  sum += nums[i];
 }
-console.log(sum)
+console.log(sum);
 
 //using reduce
-let reduce = nums.reduce((adder,num)=>adder+num,0)
-console.log(reduce)
+let reduce = nums.reduce((adder, num) => adder + num, 0);
+console.log(reduce);
 
 //with while
-j=0
-let sum1=0
-while(j<nums.length){
-    sum1+=nums[j]
-    j++
+j = 0;
+let sum1 = 0;
+while (j < nums.length) {
+  sum1 += nums[j];
+  j++;
 }
 console.log(sum);
 
 //countdown
 console.log("countdown");
-let arr=[]
-for (let i =10 ; i>0;i--){
-    arr.push(i)
+let arr = [];
+for (let i = 10; i > 0; i--) {
+  arr.push(i);
 }
-console.log(arr)
+console.log(arr);
 
 //3 to 1 sum
-let n=3
-let sum2=0
-do{
-sum2+=n
-n--
-}while(n>0)
-console.log(sum2)
+let n = 3;
+let sum2 = 0;
+do {
+  sum2 += n;
+  n--;
+} while (n > 0);
+console.log(sum2);
 
 //loop mul
-let looparr = [1,2,3]
-multipliednums=[]
-for (let i = 0; i<looparr.length;i++){
-multipliednums.push(looparr[i]*2)
+let looparr = [1, 2, 3];
+multipliednums = [];
+for (let i = 0; i < looparr.length; i++) {
+  multipliednums.push(looparr[i] * 2);
 }
 console.log(multipliednums);
 
+//using map
+let mapmultiply = looparr.map((num) => num * 2);
+console.log(mapmultiply);
+
+//copy from one arr to another using loop
+let cityarr = ["a", "b", "c"];
+let anothercityarr = [];
+for (let i = 0; i < cityarr.length; i++) {
+  anothercityarr.push(cityarr[i]);
+}
+console.log(anothercityarr);
