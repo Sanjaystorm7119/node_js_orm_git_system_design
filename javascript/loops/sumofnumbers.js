@@ -20,7 +20,26 @@ console.log(sum);
 
 //countdown
 console.log("countdown");
-
+let arr=[]
 for (let i =10 ; i>0;i--){
-    console.log(i)
+    arr.push(i)
 }
+console.log(arr)
+
+//3 to 1 sum
+let n=3
+let sum2=0
+do{
+sum2+=n
+n--
+}while(n>0)
+console.log(sum2)
+
+//loop mul
+let looparr = [1,2,3]
+multipliednums=[]
+for (let i = 0; i<looparr.length;i++){
+multipliednums.push(looparr[i]*2)
+}
+console.log(multipliednums);
+
