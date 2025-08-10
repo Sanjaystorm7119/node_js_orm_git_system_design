@@ -31,7 +31,34 @@ app.get("/books/:id", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  return res.status(200).send({ msg: "this route is under developement" });
+  const { title, author } = req.body;
+  if (!title || title === "") {
+    return res.status(400).send({ error: "title required" });
+  }
+  if (!author || author === "") {
+    return res.status(400).send({ error: "author required" });
+  }
+  const id = bookstore.length + 1;
+  const book = { id: id, title, author };
+  bookstore.push(book);
+  //   console.log(req.headers);
+  //   console.log(req.body);
+
+  return res.status(201).send({ msg: "book created" });
+});
+
+app.delete("/books/:id", (req, res) => {
+  //   res.setHeader("x-jay", "jaysan"); // x- is a convention to add custom headers
+  const id = parseInt(req.params.id, 10);
+  if (isNaN(id)) {
+    return res.status(400).send({ error: "not a number type" });
+  }
+  const indexTodelete = bookstore.findIndex((e) => e.id === id);
+  if (indexTodelete < 0) {
+    return res.status(404).send("not found");
+  }
+  bookstore.splice(indexTodelete, 1);
+  return res.status(200).send({ msg: "book deleted" });
 });
 
 app.use((err, req, res, next) => {
